@@ -1,0 +1,107 @@
+<!-- The Monitor view -->
+<section data-ng-controller="MonitorController">
+	
+	<h2> Ball Valve Monitoring & Control Application</h2>
+	<h1> Monitoring Factor</h1>
+	<table>
+		<tr>
+			<th> Pressure </th>
+			<td> <input type="text" data-ng-model="pressureText"> </td>
+		</tr>
+		<tr>
+			<th> Gas </th>
+			<td> <input type="text" data-ng-model="gasText"> </td>
+		</tr>
+		<tr>
+			<th> Temparature </th>
+			<td> <input type="text" data-ng-model="temparText"> </td>
+		</tr>
+	</table>
+	
+	<br>
+
+	<!-- Pressure Graph -->
+	<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="http://192.168.1.41:3000/channels/7/charts/1?width=450&height=260&results=60&dynamic=true" ></iframe>
+	<!-- Gas Graph -->
+	<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="http://192.168.1.41:3000/channels/9/charts/1?width=450&height=260&results=60&dynamic=true" ></iframe>
+	
+	<!-- Temparature Graph -->
+	<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="http://192.168.1.41:3000/channels/8/charts/1?width=450&height=260&results=60&dynamic=true" ></iframe>
+	
+	<hr>	
+	<h1> test Monitoring data input</h1>
+
+	
+	<form ng-submit="sendMonitorPressure();">        
+		<!--<input type="text" , value={{monitorText}}> -->		
+		Pressue : <input type="text" data-ng-model="pressureTextTmp" > <input type="submit">
+	</form>
+	
+	<form ng-submit="sendMonitorGas();">        
+		<!--<input type="text" , value={{monitorText}}> -->		
+		Gas : <input type="text" data-ng-model="gasTextTmp" > <input type="submit">
+	</form>
+	
+	<form ng-submit="sendMonitorTempar();">        
+		<!--<input type="text" , value={{monitorText}}> -->		
+		Temparature : <input type="text" data-ng-model="temparTextTmp" > <input type="submit">
+	</form>
+	
+	<hr>
+	
+	
+	
+	<form ng-submit="sendMonitor();">        
+		<!--<input type="text" , value={{monitorText}}> -->
+		<input type="text" data-ng-model="monitorText">
+		<input type="submit">
+	</form> 
+
+	<form ng-submit="sendControl();">        
+		<!--<input type="text" , value={{monitorText}}> -->
+		<input type="text" data-ng-model="ControlText" >
+		<input type="submit">
+	</form> 
+	
+	
+
+	
+	
+	
+	
+	<!-- List all messages -->
+	<hr>
+	<h1> Client Status </h1>
+    <div data-ng-repeat="message in messages" data-ng-switch="message.type">
+    	<!-- Make status messages bolder -->
+        <strong data-ng-switch-when='status'>
+            <span data-ng-bind="message.created | date:'mediumTime'"></span>
+            <span data-ng-bind="message.username"></span>
+            <span>is</span>
+            <span data-ng-bind="message.text"></span>
+        </strong>
+        <!-- Render regular messages -->
+        <span data-ng-switch-default>
+            <span data-ng-bind="message.created | date:'mediumTime'"></span>
+            <span data-ng-bind="message.username"></span>
+            <span>:</span>
+            <span data-ng-bind="message.text"></span>
+        </span>
+    </div>
+    <!-- The message form -->
+    <form ng-submit="sendMessage();">
+        <input type="text" data-ng-model="messageText">
+        <input type="submit">
+    </form>
+
+
+
+</section>
+
+
+
+    
+   
+	
+	
+
