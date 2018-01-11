@@ -9,9 +9,6 @@ var app = express(db);
 var passport = passport();
 
 
-
-
-
 app.listen(3010);
 
 module.exports = app;
