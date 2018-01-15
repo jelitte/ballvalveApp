@@ -57,12 +57,12 @@ module.exports = function(io, socket) {
         data_M_Actu_Open = monitor.getMonitorData(Url_M_Actu_Open);
         
         //var dataSet = {"Url_M_ActuOpen": data_M_ActuOpen , "Url_M_ActuClose ": data_M_ActuClose }
-		var dataSet = {"data_M_Pressure1" : data_M_Pressure1,
+		var dataSet = {"data_M_Pressure" : data_M_Pressure,
                        "data_M_gas": data_M_gas,
                        "data_M_Temp":data_M_Temp,
                        "data_M_Actu_Remote":data_M_Actu_Remote,
                        "data_M_Actu_Fault":data_M_Actu_Fault,
-                       "data_M_Actu_Close":data_M_Actu_Clsoe,
+                       "data_M_Actu_Close":data_M_Actu_Close,
                        "data_M_Actu_Open":data_M_Actu_Open,
 
                       };
