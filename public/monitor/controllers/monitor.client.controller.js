@@ -42,7 +42,14 @@ angular.module('monitor').controller('MonitorController', ['$scope', 'Socket',
 			$scope.pressureText = tmpData.data_M_Pressure1;
 			$scope.gasText = tmpData.data_M_gas;
 			$scope.temparText = tmpData.data_M_Temp;
-			
+            if(tmpData.data_M_Actu_Remote == 1){
+                $scope.toggle = true
+            }else{
+                $scope.toggle = false
+            }
+
+
+
 			
 			//console.log("Recieved Monitor data")
         });
@@ -129,6 +136,18 @@ angular.module('monitor').controller('MonitorController', ['$scope', 'Socket',
         $scope.$on('$destroy', function() {
             Socket.removeListener('chatMessage');
         })
+
+
+        $scope.toggle = false;
+
+         $scope.activeButton = function() {
+            $scope.toggle = !$scope.toggle;
+             console.log($scope.toggle);
+          }
+
+
+
+
 
     }
 ]); 

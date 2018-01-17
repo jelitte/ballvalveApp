@@ -1,1 +1,1 @@
-angular.module('monitor',[]);
+angular.module('monitor',['ui.bootstrap']);
