@@ -1,9 +1,40 @@
+
+
 <!-- The Monitor view -->
 <section data-ng-controller="MonitorController">
-	
+
+
+    <style>
+        .box1{
+            width:200px;
+            height: 100px;
+            background: red;
+        }
+        .box2{
+            width:200px;
+            height: 50px;
+            background: blue;
+        }
+        div{
+            margin: :10px;
+        }
+       .red {
+            background-color:red;
+        }
+
+        .blue {
+            background-color:blue;
+        }
+
+</style>
+
+
+
+
 	<h2> Ball Valve Monitoring & Control Application</h2>
 	<h1> Monitoring Factor</h1>
-	<table>
+
+    <table>
 		<tr>
 			<th> Pressure </th>
 			<td> <input type="text" data-ng-model="pressureText"> </td>
@@ -20,13 +51,14 @@
 	
 	<br>
 
+
+   <button  ng-click="toggle = !toggle" ng-class="{'red' : toggle}">Actuator Remote</button>
+
+    <br>
+
+
 	<!-- Pressure Graph -->
-	<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="http://192.168.1.41:3000/channels/7/charts/1?width=450&height=260&results=60&dynamic=true" ></iframe>
-	<!-- Gas Graph -->
-	<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="http://192.168.1.41:3000/channels/9/charts/1?width=450&height=260&results=60&dynamic=true" ></iframe>
-	
-	<!-- Temparature Graph -->
-	<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="http://192.168.1.41:3000/channels/8/charts/1?width=450&height=260&results=60&dynamic=true" ></iframe>
+
 	
 	<hr>	
 	<h1> test Monitoring data input</h1>
