@@ -91,7 +91,7 @@ module.exports = function(io, socket) {
         // Emit the 'chatMessage' event
         //io.emit('monitorMessage', message);
 		socket.emit('monitorMessage', message);
-    },1000);
+    },1500);
 
 
 
@@ -168,6 +168,8 @@ module.exports = function(io, socket) {
             created: Date.now(),
             username: socket.request.user.username
         });
+        clearInterval(monitorValue)
+
     });
 
 

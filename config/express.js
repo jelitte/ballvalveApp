@@ -62,6 +62,8 @@ module.exports = function(db){
     require('../app/routes/user.server.routes.js')(app);
     
     app.use(express.static('./public'));
+    app.use(express.static('./public/monitor/views/css'));
+    app.use(express.static('./app/views/css'));
     
     require('./socketio')(server,io,mongoStore);
     

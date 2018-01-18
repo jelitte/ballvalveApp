@@ -1,0 +1,46 @@
+.red {
+    background-color:red;
+}
+
+.blue {
+    background-color:blue;
+}
+
+header{
+    background-color:gray;
+}
+section{
+
+    background-color: floralwhite;
+    
+}
+
+#floatLeft{
+
+    position: static;
+    float: left;
+    background-color: white;
+
+}
+#floatRight{
+
+    position: static;
+    float: left;
+    background-color: white;
+
+}
+
+aside{
+    background-color: aliceblue;
+    float: right;
+    height : 300px;
+    overflow: auto;
+}
+
+footer{
+    background-color: cadetblue;
+    clear: both;
+}
+#statusWindow{
+    background-color: sandybrown;
+}
