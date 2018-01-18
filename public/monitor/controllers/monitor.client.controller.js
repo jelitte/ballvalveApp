@@ -39,13 +39,35 @@ angular.module('monitor').controller('MonitorController', ['$scope', 'Socket',
 			//var tmpObj = JSON.stringify(tmpText);
 			var tmpData = JSON.parse(tmpText);
 			
-			$scope.pressureText = tmpData.data_M_Pressure1;
+			$scope.pressureText = tmpData.data_M_pressure;
 			$scope.gasText = tmpData.data_M_gas;
-			$scope.temparText = tmpData.data_M_Temp;
-            if(tmpData.data_M_Actu_Remote == 1){
-                $scope.toggle = true
+			$scope.flangeTemperText = tmpData.data_M_flangeTemper;
+            $scope.flangePressureText = tmpData.data_M_flangePressure;
+            $scope.flangeFlowText = tmpData.data_M_flangeFlow;
+
+
+			if(tmpData.data_M_actu_remote == 1){
+                $scope.toggleRemote = true
             }else{
-                $scope.toggle = false
+                $scope.toggleRemote = false
+            }
+
+            if(tmpData.data_M_actu_fault == 1){
+                $scope.toggleFault = true
+            }else{
+                $scope.toggleFault = false
+            }
+
+            if(tmpData.data_M_actu_open == 1){
+                $scope.toggleOpen = true
+            }else{
+                $scope.toggleOpen = false
+            }
+
+            if(tmpData.data_M_actu_close == 1){
+                $scope.toggleClose = true
+            }else{
+                $scope.toggleClose = false
             }
 
 

@@ -14,3 +14,11 @@ app.listen(3010);
 module.exports = app;
 
 console.log("** Server Running.")
+
+// Don't stop server when "throw err"
+process.on('uncaughtException', function (err) {
+
+    console.log('Caught exception: ' + err);
+
+
+});

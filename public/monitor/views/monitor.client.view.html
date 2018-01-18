@@ -16,7 +16,7 @@
             background: blue;
         }
         div{
-            margin: :10px;
+            margin: 10px;
         }
        .red {
             background-color:red;
@@ -30,6 +30,7 @@
 
 
 
+    <a href="/signout">Sign out</a>
 
 	<h2> Ball Valve Monitoring & Control Application</h2>
 	<h1> Monitoring Factor</h1>
@@ -43,16 +44,35 @@
 			<th> Gas </th>
 			<td> <input type="text" data-ng-model="gasText"> </td>
 		</tr>
+
+        <tr>
+            <th> Flange Temperature </th>
+            <td> <input type="text" data-ng-model="flangeTemperText"> </td>
+        </tr>
+
 		<tr>
-			<th> Temparature </th>
-			<td> <input type="text" data-ng-model="temparText"> </td>
+			<th> Flange Pressure </th>
+			<td> <input type="text" data-ng-model="flangePressureText"> </td>
 		</tr>
+
+        <tr>
+            <th> Flange Flow </th>
+            <td> <input type="text" data-ng-model="flangeFlowText"> </td>
+        </tr>
+
 	</table>
 	
 	<br>
 
 
-   <button  ng-click="toggle = !toggle" ng-class="{'red' : toggle}">Actuator Remote</button>
+    <button  ng-class="{'red' : toggleRemote}">Actuator Remote</button>
+
+	<button  ng-class="{'red' : toggleFault}">Actuator Fault</button>
+
+    <button  ng-class="{'red' : toggleOpen}">Actuator Open</button>
+
+    <button  ng-class="{'red' : toggleClose}">Actuator Close</button>
+
 
     <br>
 
@@ -85,13 +105,13 @@
 	
 	<form ng-submit="sendMonitor();">        
 		<!--<input type="text" , value={{monitorText}}> -->
-		<input type="text" data-ng-model="monitorText">
+		monitorTest : <input type="text" data-ng-model="monitorText">
 		<input type="submit">
 	</form> 
 
 	<form ng-submit="sendControl();">        
 		<!--<input type="text" , value={{monitorText}}> -->
-		<input type="text" data-ng-model="ControlText" >
+		controlTest : <input type="text" data-ng-model="ControlText" >
 		<input type="submit">
 	</form> 
 	

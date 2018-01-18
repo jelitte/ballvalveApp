@@ -11,7 +11,8 @@ exports.getMonitorData = function(dataUrl){
             var tmpObj = res.getBody('utf8');
             //var tmpObj = JSON.stringify(res.getBody('utf8'))
             var fieldObj = JSON.parse(tmpObj); 
-            var resultData = fieldObj.field1;
+            //var resultData = fieldObj.field1;
+            var resultData = fieldObj;
             //console.log(resultData);
 
            return resultData;
