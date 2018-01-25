@@ -92,18 +92,15 @@ angular.module('monitor').controller('MonitorController', ['$scope', 'Socket',
             //this.monitorText = "";
         }
 		
-		 $scope.sendControl = function() {
+		 $scope.sendControl = function(data) {
         	// Create a new message object
             var message = {
-                text: this.ControlText,
+                text: data
             };
-            
-			console.log("Send Control")
+
+			console.log("Send Control :"+ data);
             // Emit a 'chatMessage' message event
-            Socket.emit('ControlMessage', message);
-            
-            // Clear the message text
-            this.ControlText = "";
+            Socket.emit('ControlMessage', message)
         }
 		
 		 $scope.sendMonitorPressure = function() {

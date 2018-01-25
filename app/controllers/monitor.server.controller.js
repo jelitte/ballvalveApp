@@ -125,38 +125,11 @@ module.exports = function(io, socket) {
 
 	socket.on('ControlMessage',function(message){
 
-		if(message.status == 'pressure'){
-			var url = "http://165.133.84.177:3000/update?key=3Z6HP8IG2L1UVJ5R&field1=" + message.text;
-			console.log(url);
+		//var url = "http://192.168.1.41:3000/update?key=9PLD83Z2F5HKSXZL&field1=" + message.text;
+        var url =monitor.makeUrlofSendControl(config.thingSpeakServerIP, config.controlKey,message.text);
+		//console.log(url);
 
-			monitor.setControlData(url);
-
-		}
-
-
-		if(message.status == 'gas'){
-			var url = "http://165.133.84.177:3000/update?key=MCDBYNPP9KJQ88G4&field1=" + message.text;
-			console.log(url);
-
-			monitor.setControlData(url);
-
-		}
-
-		if(message.status == 'tempar'){
-			var url = "http://165.133.84.177:3000/update?key=M750998VWC7VCJVP&field1=" + message.text;
-			console.log(url);
-
-			monitor.setControlData(url);
-
-		}
-		/*
-		var url = "http://192.168.1.41:3000/update?key=9PLD83Z2F5HKSXZL&field1=" + message.text;
-		console.log(url);
-
-		monitor.setControlData(url);*/
-
-
-
+		monitor.setControlData(url)
 	});
 
 

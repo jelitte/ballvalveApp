@@ -43,7 +43,13 @@ exports.makeUrlofGetLast = function(serverIP,channelNum){
     return result;
 
 };
+exports.makeUrlofSendControl = function(serverIP,key,data){
+    //var Url_M_ActuOpen = "http://127.0.0.1:3000/channels/3/feeds/last"
+    var result = serverIP + key + data;
+    //console.log(result);
+    return result;
 
+};
             
         /*
      

@@ -42,5 +42,10 @@ footer{
     clear: both;
 }
 #statusWindow{
+    position: static;
+    float: left;
     background-color: sandybrown;
+    height: 500px;
+    width: 500px;
+    overflow: scroll;
 }

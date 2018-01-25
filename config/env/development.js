@@ -6,6 +6,7 @@ module.exports = {
     // first :  Monitor Sensor, second : Monitor Actuator, third : control
     channelTest : {'monitorSensor': '12',
         'monitorActuator':'13',
-        'control':'14'}
+        'control':'14'},
+    controlKey : '/update?key=6V49NL6PKJ7D5AEI&field1='
 
 };
