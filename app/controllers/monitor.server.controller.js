@@ -125,11 +125,13 @@ module.exports = function(io, socket) {
 
 	socket.on('ControlMessage',function(message){
 
+
+
 		//var url = "http://192.168.1.41:3000/update?key=9PLD83Z2F5HKSXZL&field1=" + message.text;
         var url =monitor.makeUrlofSendControl(config.thingSpeakServerIP, config.controlKey,message.text);
 		//console.log(url);
 
-		monitor.setControlData(url)
+		monitor.setControlData(url);
 	});
 
 
