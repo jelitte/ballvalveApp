@@ -1,5 +1,5 @@
 module.exports = {
-    db : 'mongodb://165.133.84.177:27017/mean-user',
+    db : 'mongodb://165.133.84.177:27017/ballvalve',
     sessionSecret:'developmentSessionSecret',
     thingSpeakServerIP : 'http://165.133.84.177:3000',
     // ThingSpeak Server Channel Number

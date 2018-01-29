@@ -23,9 +23,37 @@ var UserSchema = new Schema({
         type: String,
         validate:[
             function(password){
-                return password && password.length > 6;
+                return password && password.length >= 6;
             }, 'Password shoud be longer'            
         ]
+    },
+
+    monitorSensor:{
+        type: String,
+
+        required:'Information of monitorSensor channel is required'
+
+    },
+
+    monitorActuator:{
+        type: String,
+
+        required:'Information of monitorActuator channel is required'
+
+    },
+
+    control:{
+        type: String,
+
+        required:'Information of control channel is required'
+
+    },
+
+    controlKey:{
+        type: String,
+
+        required:'Information of controlKey is required'
+
     },
     
     salt:{

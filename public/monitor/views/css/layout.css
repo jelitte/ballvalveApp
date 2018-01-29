@@ -41,11 +41,25 @@ footer{
     background-color: cadetblue;
     clear: both;
 }
-#statusWindow{
+#statusWindowUpper{
+    position: static;
+    float: left;
+    background-color: sandybrown;
+    width: 500px;
+
+}
+#statusWindowLower{
     position: static;
     float: left;
     background-color: sandybrown;
     height: 500px;
     width: 500px;
     overflow: scroll;
+}
+
+#signupLabel{
+    display: inline-block;
+    width: 125px;
+    text-align: right;
+    margin-top: 2px;
 }

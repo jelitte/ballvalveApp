@@ -1,22 +1,75 @@
 <head>
-
+	<link href="../../monitor/views/css/layout.css" rel="stylesheet">
+	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <!-- The example view -->
-<section ng-controller="ExampleController">
+<div ng-controller="ExampleController">
 	<!-- If the user is not authenticated show the authentication link -->
-	<div data-ng-show="!authentication.user">
-		<a href="/signup">Sign up</a>
-		<a href="/signin">Sign in</a>
+	<header>
+		<div data-ng-show="!authentication.user">
+			<a class="btn btn-default" href="/signup">Sign up</a>
+			<!--<a class="btn btn-default" href="/signin">Sign in</a> -->
+			<h2> Ball Valve Monitoring & Control Application</h2>
 
-	</div>
-	<!-- Otherwise, show the user details and application links -->
-	<div data-ng-show="authentication.user">
-		<h1>Hello <span data-ng-bind="authentication.user.fullName"></span></h1>
-		<a href="/signout">Sign out</a>
-		<ul>
-			<li><a href="/#!/monitor">Monitor</a></li>		
-		</ul>
-	</div>
-</section>
+		</div>
+
+
+		<!-- Otherwise, show the user details and application links -->
+		<div data-ng-show="authentication.user">
+			<!--<h1>Hello <span data-ng-bind="authentication.user.fullName"></span></h1> -->
+			<a class="btn btn-default" href="/signout">Sign out</a>
+
+			<h2> Ball Valve Monitoring & Control Application</h2>
+		</div>
+
+
+
+	</header>
+
+	<section>
+
+		<div data-ng-show="!authentication.user">
+			<form action="/signin" method="post">
+
+
+				<div>
+					<label id="signupLabel">Username : </label>
+					<input type="text" name="username"/>
+				</div>
+
+				<div>
+					<label id="signupLabel">Password : </label>
+					<input type="text" name="password"/>
+				</div>
+
+				<div>
+					<input type="submit" value="Sign In"/>
+				</div>
+
+			</form>
+
+		</div>
+
+
+		<!-- Otherwise, show the user details and application links -->
+		<div data-ng-show="authentication.user">
+
+			<ul>
+				<li><a href="/#!/monitor">Monitor</a></li>
+			</ul>
+		</div>
+
+	</section>
+
+
+
+	<footer>
+
+		<p> Copyright 2018 IAE
+	</footer>
+
+
+
+</div>

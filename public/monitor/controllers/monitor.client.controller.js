@@ -164,6 +164,9 @@ angular.module('monitor').controller('MonitorController', ['$scope', 'Socket',
              console.log($scope.toggle);
           }
 
+        $scope.singleModel = 1;
+
+
 
 
 

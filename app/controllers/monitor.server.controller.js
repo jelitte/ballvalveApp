@@ -47,9 +47,11 @@ module.exports = function(io, socket) {
 
 
 
-        var Url_M_sensor = monitor.makeUrlofGetLast(config.thingSpeakServerIP, config.channelTest.monitorSensor);
-        var Url_M_actu = monitor.makeUrlofGetLast(config.thingSpeakServerIP, config.channelTest.monitorActuator);
+        //var Url_M_sensor = monitor.makeUrlofGetLast(config.thingSpeakServerIP, config.channelTest.monitorSensor);
+        //var Url_M_actu = monitor.makeUrlofGetLast(config.thingSpeakServerIP, config.channelTest.monitorActuator);
 
+        var Url_M_sensor = monitor.makeUrlofGetLast(config.thingSpeakServerIP, socket.request.user.monitorSensor);
+        var Url_M_actu = monitor.makeUrlofGetLast(config.thingSpeakServerIP, socket.request.user.monitorActuator);
 
         var data_M_sensor = monitor.getMonitorData(Url_M_sensor);
         var data_M_actu = monitor.getMonitorData(Url_M_actu);
@@ -128,7 +130,8 @@ module.exports = function(io, socket) {
 
 
 		//var url = "http://192.168.1.41:3000/update?key=9PLD83Z2F5HKSXZL&field1=" + message.text;
-        var url =monitor.makeUrlofSendControl(config.thingSpeakServerIP, config.controlKey,message.text);
+        //var url =monitor.makeUrlofSendControl(config.thingSpeakServerIP, config.controlKey,message.text);
+        var url =monitor.makeUrlofSendControl(config.thingSpeakServerIP, socket.request.user.controlKey,message.text);
 		//console.log(url);
 
 		monitor.setControlData(url);
