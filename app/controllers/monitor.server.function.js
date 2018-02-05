@@ -51,6 +51,40 @@ exports.makeUrlofSendControl = function(serverIP,key,data){
     return result;
 
 };
+
+exports.makeUrlofSendControl = function(serverIP,channel,key){
+    //var Url_M_ActuOpen = "http://127.0.0.1:3000/channels/3/feeds/last"
+
+    var result = serverIP;
+    //console.log(result);
+    return result;
+
+};
+
+exports.clearChannel = function(url){
+    console.log('clear channel')
+    var url1 = 'http://165.133.84.177:3000/channels/15/feeds.json?api_key=XBG3P4QQWH74YD8F';
+    //var url1 = 'https://165.133.84.177:3000/channels/15/feeds.json';
+    var options ={
+        url: url1,
+        method: "DELETE",
+        json:true,
+    };
+
+
+    var tmp = request(options,function (error,response,body) {
+        if(!error && response.statusCode == 200){
+
+            console.log(body)
+
+        }else{
+            console.log("failed")
+        }
+
+    });
+
+
+}
             
         /*
      

@@ -1,3 +1,5 @@
+
+
 angular.module('monitor').controller('MonitorController', ['$scope', 'Socket',
     function($scope, Socket) {
     	// Create a messages array
@@ -148,8 +150,26 @@ angular.module('monitor').controller('MonitorController', ['$scope', 'Socket',
             // Clear the message text
             this.temparTextTmp = "0";
         }
-		 
-		 
+
+
+        $scope.clearChannel = function() {
+
+            var message = {
+                text: 'tmp'
+            };
+
+
+            // Emit a 'chatMessage' message event
+            Socket.emit('ClearChannel', message);
+            console.log("clear channel");
+
+
+
+        }
+
+
+
+
 
         // Remove the event listener when the controller instance is destroyed
         $scope.$on('$destroy', function() {

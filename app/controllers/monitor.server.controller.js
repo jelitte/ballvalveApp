@@ -150,6 +150,12 @@ module.exports = function(io, socket) {
 
     });
 
+    socket.on('ClearChannel',function (message) {
+        var url =  "1";
+        monitor.clearChannel(url);
+
+    })
+
 
 
 };

@@ -3,23 +3,30 @@
     <head>
         <title> <%=title %></title>
         <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+        <link href="../../monitor/views/css/layout.css" rel="stylesheet">
 
 
     </head>
     <body>
-        
-        <section ng-view></section>
-        
-        
-        <script type="text/javascript"> 
-            window.user =<%- user ||'null' %>; 
-        </script>
+        <header>
+            <% if(user){ %>
+                <a class="btn btn-default" href="/signout">Sign out</a>
+            <% } else { %>
+            <a class="btn btn-default" href="/signup">Sign up</a>
+            <% } %>
+
+            <h2> Ball Valve Monitoring & Control Application</h2>
 
 
-        
-        
+        </header>
 
-        	<!-- Load the Socket.io client -->	
+
+
+
+
+
+
+        <!-- Load the Socket.io client -->
         <script type="text/javascript" src="/socket.io/socket.io.js"></script>
         
 
@@ -56,9 +63,25 @@
 	<script type="text/javascript" src="/monitor/config/monitor.client.routes.js"></script>
         
         
-         <script type="text/javascript" src="/application.js"></script>     
-        
-        
-        
+         <script type="text/javascript" src="/application.js"></script>
+
+
+        <script type="text/javascript">
+            window.user =<%- user ||'null' %>;
+        </script>
+
+
+        <section ng-view></section>
+
+
+
+        <footer>
+
+            <p> Copyright 2018 IAE
+        </footer>
+
+
+
+
     </body>
 </html>
