@@ -1,0 +1,147 @@
+<head>
+    <link href="../../monitor/views/css/layout.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<!-- The Monitor view -->
+<div data-ng-controller="MonitorController">
+
+    <section>
+        <div id="floatLeft">
+            <h2> Monitoring </h2>
+
+            <h3> Actuator </h3>
+            <table>
+                <tr>
+                    <th> Remote : </th>
+                    <td><button class ="btn btn-success" ng-class="{'red' : toggleRemote}">   </button></td>
+                </tr>
+
+                <tr>
+                    <th> Fault : </th>
+                    <td><button class = "btn btn-success"  ng-class="{'red' : toggleFault}">  </button></td>
+                </tr>
+
+                <tr>
+                    <th>  Open : </th>
+                    <td><button class = "btn btn-success" ng-class="{'red' : toggleOpen}"></button></td>
+                </tr>
+                <tr>
+                    <th>  Close : </th>
+                    <td><button class = "btn btn-success" ng-class="{'red' : toggleClose}"></button></td>
+                </tr>
+            </table>
+
+
+
+
+
+
+            <h3> Sensor </h3>
+
+            <table>
+                <tr>
+                    <th> Pressure </th>
+                    <td> <input type="text" data-ng-model="pressureText"> </td>
+                </tr>
+                <tr>
+                    <th> Gas </th>
+                    <td> <input type="text" data-ng-model="gasText"> </td>
+                </tr>
+
+                <tr>
+                    <th> Flange Temperature </th>
+                    <td> <input type="text" data-ng-model="flangeTemperText"> </td>
+                </tr>
+
+                <tr>
+                    <th> Flange Pressure </th>
+                    <td> <input type="text" data-ng-model="flangePressureText"> </td>
+                </tr>
+
+                <tr>
+                    <th> Flange Flow </th>
+                    <td> <input type="text" data-ng-model="flangeFlowText"> </td>
+                </tr>
+
+            </table>
+
+            <br>
+        </div>
+
+        <div id="floatRight">
+            <h2> Control Actuator </h2>
+            <table>
+                <tr>
+                    <button ng-click = "sendControl('1')" > Open </button>
+
+                </tr>
+                <tr>
+                    <button ng-click = "sendControl('2')" > Close </button>
+                </tr>
+                <tr>
+                    <button ng-click = "sendControl('3')" > Stop </button>
+                </tr>
+
+            </table>
+        </div>
+        <div id="statusWindow">
+            <div id="statusWindowUpper">
+                <!-- List all messages -->
+
+                <h3> Client Status </h3>
+                <!-- The message form -->
+                <form ng-submit="sendMessage();">
+                    <input type="text" data-ng-model="messageText">
+                    <input type="submit">
+                </form>
+
+            </div>
+
+
+            <div id ="statusWindowLower">
+
+
+                <div data-ng-repeat="message in messages" data-ng-switch="message.type">
+                    <!-- Make status messages bolder -->
+                    <strong data-ng-switch-when='status'>
+                        <span data-ng-bind="message.created | date:'mediumTime'"></span>
+                        <span data-ng-bind="message.username"></span>
+                        <span>is</span>
+                        <span data-ng-bind="message.text"></span>
+                    </strong>
+                    <!-- Render regular messages -->
+                    <span data-ng-switch-default>
+                        <span data-ng-bind="message.created | date:'mediumTime'"></span>
+                        <span data-ng-bind="message.username"></span>
+                        <span>:</span>
+                        <span data-ng-bind="message.text"></span>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+</div>
+
+
+
+
+<!--
+    <form action="http://165.133.84.177:3000/stream/channels/12/feeds?api_key=F4LMIUHM5R4GK5VY" class="button_to" method="post">
+        <div>
+            <input class="btn btn-primary" type="submit" value="Download" />
+
+        </div>
+    </form>
+
+    <button class="btn btn-primary" ng-click = "clearChannel()" > Clear Channel </button>
+
+    -->
+
+
+
+
+

@@ -6,12 +6,20 @@
     background-color:blue;
 }
 
+[class*="col-"] {
+    padding: 30px;
+    border: 1px solid gray;
+
+}
+
+
+
 header{
     background-color:gray;
 }
 section{
 
-    background-color: floralwhite;
+    /*background-color: floralwhite;*/
     
 }
 
@@ -33,7 +41,7 @@ section{
 aside{
     background-color: aliceblue;
     float: right;
-    height : 300px;
+    height : 270px;
     overflow: auto;
 }
 
@@ -41,20 +49,24 @@ footer{
     background-color: cadetblue;
     clear: both;
 }
-#statusWindowUpper{
-    position: static;
-    float: left;
+
+.sectionCondition{
+    background-color: floralwhite;
+}
+#statusWindow{
+
     background-color: sandybrown;
-    width: 500px;
+
+    /*width: 500px;*/
+
+}
+#statusWindowUpper{
 
 }
 #statusWindowLower{
-    position: static;
-    float: left;
-    background-color: sandybrown;
-    height: 500px;
-    width: 500px;
+    height: 115px;
     overflow: scroll;
+
 }
 
 #signupLabel{

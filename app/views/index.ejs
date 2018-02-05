@@ -8,15 +8,16 @@
 
     </head>
     <body>
-        <header>
-            <% if(user){ %>
-                <a class="btn btn-default" href="/signout">Sign out</a>
-            <% } else { %>
-            <a class="btn btn-default" href="/signup">Sign up</a>
-            <% } %>
+        <header class="container">
+            <div class="center-block">
+                <% if(user){ %>
+                    <a class="btn btn-default" href="/signout">Sign out</a>
+                <% } else { %>
+                <a class="btn btn-default" href="/signup">Sign up</a>
+                <% } %>
 
-            <h2> Ball Valve Monitoring & Control Application</h2>
-
+                <h2> Ball Valve Monitoring & Control Application</h2>
+            </div>
 
         </header>
 
@@ -75,9 +76,12 @@
 
 
 
-        <footer>
-
-            <p> Copyright 2018 IAE
+        <footer class="container">
+            <div class="center-block">
+                <div  class="row">
+                <p> @ Copyright 2018 IAE
+                </div>
+            </div>
         </footer>
 
 
