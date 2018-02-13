@@ -5,31 +5,73 @@
 <!-- The Monitor view -->
 <div data-ng-controller="MonitorController">
 
-    <section class="container">
-        <div class="center-block"  >
-            <div class="row">
-                <div class="col-lg-6 sectionCondition">
-                    <h2> Monitoring </h2>
 
-                    <h3> Actuator </h3>
+
+    <section class="container center-block">
+
+            <div class="row">
+                <div class="col-md-6 sectionCondition">
+                    <h2> Monitoring </h2>
+                    <hr>
+
                     <table>
+                        <caption> <h3> Sensor </h3> </caption>
+                        <tr>
+                            <th> 비상 경보 : </th>
+                            <td><button class = "btn btn-success btn-lg" ng-class="{'red' : toggleAlert}"></button></td>
+
+                        </tr>
+                        <tr>
+                            <th> 밸브 압력 : </th>
+                            <td> <input type="text" data-ng-model="pressureText"> </td>
+                            <td> bar </td>
+                        </tr>
+                        <tr>
+                            <th> 밸브 가스 : </th>
+                            <td> <input type="text" data-ng-model="gasText"> </td>
+                            <td> ppm </td>
+                        </tr>
+
+                        <tr>
+                            <th> 배관 온도 : </th>
+                            <td> <input type="text" data-ng-model="flangeTemperText"> </td>
+                            <td> &degC   </td>
+                        </tr>
+
+                        <tr>
+                            <th> 배관 압력 : </th>
+                            <td> <input type="text" data-ng-model="flangePressureText"> </td>
+                            <td>bar</td>
+                        </tr>
+
+                        <tr>
+                            <th> 배관 유속 : </th>
+                            <td> <input type="text" data-ng-model="flangeFlowText"> </td>
+                            <td>m/s</td>
+                        </tr>
+
+                    </table>
+                    <hr>
+
+                    <table>
+                        <caption> <h3> Actuator </h3> </caption>
                         <tr>
                             <th> Remote : </th>
-                            <td><button class ="btn btn-success" ng-class="{'red' : toggleRemote}">   </button></td>
+                            <td><button class ="btn btn-success btn-lg" ng-class="{'red' : toggleRemote}">   </button></td>
                         </tr>
 
                         <tr>
                             <th> Fault : </th>
-                            <td><button class = "btn btn-success"  ng-class="{'red' : toggleFault}">  </button></td>
+                            <td><button class = "btn btn-success btn-lg"  ng-class="{'red' : toggleFault}">  </button></td>
                         </tr>
 
                         <tr>
                             <th>  Open : </th>
-                            <td><button class = "btn btn-success" ng-class="{'red' : toggleOpen}"></button></td>
+                            <td><button class = "btn btn-success btn-lg" ng-class="{'red' : toggleOpen}"></button></td>
                         </tr>
                         <tr>
                             <th>  Close : </th>
-                            <td><button class = "btn btn-success" ng-class="{'red' : toggleClose}"></button></td>
+                            <td><button class = "btn btn-success btn-lg" ng-class="{'red' : toggleClose}"></button></td>
                         </tr>
                     </table>
 
@@ -37,64 +79,36 @@
 
 
 
-
-                    <h3> Sensor </h3>
-
-                    <table>
-                        <tr>
-                            <th> Pressure </th>
-                            <td> <input type="text" data-ng-model="pressureText"> </td>
-                        </tr>
-                        <tr>
-                            <th> Gas </th>
-                            <td> <input type="text" data-ng-model="gasText"> </td>
-                        </tr>
-
-                        <tr>
-                            <th> Flange Temperature </th>
-                            <td> <input type="text" data-ng-model="flangeTemperText"> </td>
-                        </tr>
-
-                        <tr>
-                            <th> Flange Pressure </th>
-                            <td> <input type="text" data-ng-model="flangePressureText"> </td>
-                        </tr>
-
-                        <tr>
-                            <th> Flange Flow </th>
-                            <td> <input type="text" data-ng-model="flangeFlowText"> </td>
-                        </tr>
-
-                    </table>
 
                 </div>
 
-                <div class="col-lg-6  sectionCondition">
+                <div class="col-md-6  sectionCondition">
                     <h2> Control Actuator </h2>
+                    <hr>
                     <table>
                         <tr>
-                            <button ng-click = "sendControl('1')" > Open </button>
+                            <button class="btn btn-primary" ng-click = "sendControl('1')" style="margin-right: 10px" > Open </button>
 
                         </tr>
                         <tr>
-                            <button ng-click = "sendControl('2')" > Close </button>
+                            <button class="btn btn-success" ng-click = "sendControl('2')" style="margin-right: 10px" > Close </button>
                         </tr>
                         <tr>
-                            <button ng-click = "sendControl('3')" > Stop </button>
+                            <button class="btn btn-danger" ng-click = "sendControl('3')" style="margin-right: 10px" > Stop </button>
                         </tr>
 
                     </table>
                 </div>
 
-                <div class="col-lg-6" id="statusWindow">
+                <div class="col-md-6" id="statusWindow">
                     <div id="statusWindowUpper">
                         <!-- List all messages -->
 
                         <h3> Client Status </h3>
                         <!-- The message form -->
                         <form ng-submit="sendMessage();">
-                            <input type="text" data-ng-model="messageText">
-                            <input type="submit">
+                            <input type="text" data-ng-model="messageText" style="width: 150px">
+                            <input class = "btn btn-info" type="submit">
                         </form>
 
                     </div>
@@ -123,10 +137,8 @@
                     </div>
                 </div>
             </div>
-        </div>
 
     </section>
-
 
 </div>
 

@@ -10,13 +10,21 @@
     <body>
         <header class="container">
             <div class="center-block">
-                <% if(user){ %>
-                    <a class="btn btn-default" href="/signout">Sign out</a>
-                <% } else { %>
-                <a class="btn btn-default" href="/signup">Sign up</a>
-                <% } %>
+                <a target="_blank" href="http://www.flowone.co.kr" style="margin-right: 50px"> <img src="img/logo_flowone_white.png" /></a>
+                <a target="_blank" href="http://www.iae.re.kr"> <img src="img/logo_iae_white.png" /></a>
 
-                <h2> Ball Valve Monitoring & Control Application</h2>
+
+
+                <% if(user){ %>
+                    <a class="btn btn-default" style="float: right" href="/signout">Sign out</a>
+                <% } else { %>
+                <a class="btn btn-default" style="float: right"  href="/signup">Sign up</a>
+                <% } %>
+                <br>
+
+                <h2 style="text-align: center; color: white;"> Ball Valve Monitoring & Control Application</h2>
+
+
             </div>
 
         </header>
@@ -79,7 +87,7 @@
         <footer class="container">
             <div class="center-block">
                 <div  class="row">
-                <p> @ Copyright 2018 IAE
+                <p style="text-align: center; color: white;"> Copyright(C) Institute for Advanced Engineering(IAE) all right reserved.
                 </div>
             </div>
         </footer>

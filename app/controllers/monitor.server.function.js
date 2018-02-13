@@ -52,14 +52,6 @@ exports.makeUrlofSendControl = function(serverIP,key,data){
 
 };
 
-exports.makeUrlofSendControl = function(serverIP,channel,key){
-    //var Url_M_ActuOpen = "http://127.0.0.1:3000/channels/3/feeds/last"
-
-    var result = serverIP;
-    //console.log(result);
-    return result;
-
-};
 
 exports.clearChannel = function(url){
     console.log('clear channel')
@@ -84,6 +76,14 @@ exports.clearChannel = function(url){
     });
 
 
+}
+//경보신호 체크 함수
+exports.makeAlertSignal = function(dataSet){
+    var result = 0;
+    //console.log(dataSet.data_M_pressure);
+    if(dataSet.data_M_pressure > 10)
+        result=1;
+    return result;
 }
             
         /*

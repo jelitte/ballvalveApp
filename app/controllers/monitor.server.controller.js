@@ -67,6 +67,19 @@ module.exports = function(io, socket) {
         var data_M_actu_open = data_M_actu.field3;
         var data_M_actu_close = data_M_actu.field4;
 
+        // 경보신호 체크를 위한 데이터 셋
+        var tmpDataSet = {
+             "data_M_pressure" : data_M_pressure,
+             "data_M_gas": data_M_gas,
+
+             "data_M_flangeFlow":data_M_flangeFlow,
+             "data_M_flangeTemper":data_M_flangeTemper,
+             "data_M_flangePressure":data_M_flangePressure,
+
+        };
+        // 경보신호 함수 적용
+       var data_alert = monitor.makeAlertSignal(tmpDataSet);
+
 
 
 
@@ -83,6 +96,7 @@ module.exports = function(io, socket) {
             "data_M_actu_fault":data_M_actu_fault,
             "data_M_actu_open":data_M_actu_open,
             "data_M_actu_close":data_M_actu_close,
+            "data_alert" : data_alert,
             };
 
         var dataSetText= JSON.stringify(dataSet);
@@ -93,7 +107,7 @@ module.exports = function(io, socket) {
         // Emit the 'chatMessage' event
         //io.emit('monitorMessage', message);
 		socket.emit('monitorMessage', message);
-    },1500);
+    },1000);
 
 
 
@@ -126,13 +140,14 @@ module.exports = function(io, socket) {
 
 
 	socket.on('ControlMessage',function(message){
-
-
-
 		//var url = "http://192.168.1.41:3000/update?key=9PLD83Z2F5HKSXZL&field1=" + message.text;
         //var url =monitor.makeUrlofSendControl(config.thingSpeakServerIP, config.controlKey,message.text);
-        var url =monitor.makeUrlofSendControl(config.thingSpeakServerIP, socket.request.user.controlKey,message.text);
+        //var url = monitor.makeUrlofSendControl(config.thingSpeakServerIP, socket.request.user.controlKey, message.text);
+        var url = monitor.makeUrlofSendControl(config.thingSpeakServerIP, socket.request.user.controlKey, message.text);
 		//console.log(url);
+        //console.log(socket.request.user.controlKey);
+        console.log(message.text);
+
 
 		monitor.setControlData(url);
 	});

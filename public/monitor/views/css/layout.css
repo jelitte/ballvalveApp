@@ -15,7 +15,7 @@
 
 
 header{
-    background-color:gray;
+    background-color:darkblue;
 }
 section{
 
@@ -46,7 +46,7 @@ aside{
 }
 
 footer{
-    background-color: cadetblue;
+    background-color: black;
     clear: both;
 }
 
@@ -64,7 +64,7 @@ footer{
 
 }
 #statusWindowLower{
-    height: 115px;
+    height: 285px;
     overflow: scroll;
 
 }
@@ -74,4 +74,18 @@ footer{
     width: 125px;
     text-align: right;
     margin-top: 2px;
+}
+
+th{
+    width: 100px;
+    height: 30px;
+
+}
+td{
+    width: 110px;
+    text-align: left;
+
+}
+input{
+    width: 100px;
 }

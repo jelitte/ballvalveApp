@@ -46,6 +46,8 @@ angular.module('monitor').controller('MonitorController', ['$scope', 'Socket',
 			$scope.flangeTemperText = tmpData.data_M_flangeTemper;
             $scope.flangePressureText = tmpData.data_M_flangePressure;
             $scope.flangeFlowText = tmpData.data_M_flangeFlow;
+            $scope.data_alert = tmpData.data_alert;
+
 
 
 			if(tmpData.data_M_actu_remote == 1){
@@ -70,6 +72,12 @@ angular.module('monitor').controller('MonitorController', ['$scope', 'Socket',
                 $scope.toggleClose = true
             }else{
                 $scope.toggleClose = false
+            }
+
+            if(tmpData.data_alert == 1){
+                $scope.toggleAlert = true
+            }else{
+                $scope.toggleAlert = false
             }
 
 
@@ -185,6 +193,9 @@ angular.module('monitor').controller('MonitorController', ['$scope', 'Socket',
           }
 
         $scope.singleModel = 1;
+
+
+
 
 
 
