@@ -10,9 +10,16 @@
     <section class="container center-block">
 
             <div class="row">
+
+
+
+
+
+
                 <div class="col-md-6 sectionCondition">
                     <h2> Monitoring </h2>
                     <hr>
+
 
                     <table>
                         <caption> <h3> Sensor </h3> </caption>
@@ -74,13 +81,8 @@
                             <td><button class = "btn btn-success btn-lg" ng-class="{'red' : toggleClose}"></button></td>
                         </tr>
                     </table>
-
-
-
-
-
-
                 </div>
+
 
                 <div class="col-md-6  sectionCondition">
                     <h2> Control Actuator </h2>
@@ -99,6 +101,14 @@
 
                     </table>
                 </div>
+
+
+                <div class="col-md-6 sectionCondition">
+                  <h2> Valve Information </h2>
+                  <hr>
+                  <h4> {{valveInfo}} </h4>
+                </div>
+
 
                 <div class="col-md-6" id="statusWindow">
                     <div id="statusWindowUpper">
@@ -156,8 +166,3 @@
     <button class="btn btn-primary" ng-click = "clearChannel()" > Clear Channel </button>
 
     -->
-    
-   
-	
-	
-

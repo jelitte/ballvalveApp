@@ -67,6 +67,8 @@ module.exports = function(io, socket) {
         var data_M_actu_open = data_M_actu.field3;
         var data_M_actu_close = data_M_actu.field4;
 
+        var valveInfo = socket.request.user.info;
+
         // 경보신호 체크를 위한 데이터 셋
         var tmpDataSet = {
              "data_M_pressure" : data_M_pressure,
@@ -97,6 +99,7 @@ module.exports = function(io, socket) {
             "data_M_actu_open":data_M_actu_open,
             "data_M_actu_close":data_M_actu_close,
             "data_alert" : data_alert,
+            "valveInfo" : valveInfo,
             };
 
         var dataSetText= JSON.stringify(dataSet);

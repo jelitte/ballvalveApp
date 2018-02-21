@@ -1,4 +1,5 @@
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+//process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+process.env.NODE_ENV = 'development';
 
 var express = require('./config/express');
 var mongoose = require('./config/mongoose');
@@ -19,6 +20,4 @@ console.log("** Server Running.")
 process.on('uncaughtException', function (err) {
 
     console.log('Caught exception: ' + err);
-
-
 });

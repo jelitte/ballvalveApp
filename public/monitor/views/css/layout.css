@@ -20,7 +20,7 @@ header{
 section{
 
     /*background-color: floralwhite;*/
-    
+
 }
 
 #floatLeft{
@@ -64,14 +64,14 @@ footer{
 
 }
 #statusWindowLower{
-    height: 285px;
+    height: 100px;
     overflow: scroll;
 
 }
 
-#signupLabel{
+.signupLabel{
     display: inline-block;
-    width: 125px;
+    width: 150px;
     text-align: right;
     margin-top: 2px;
 }

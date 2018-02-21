@@ -14,54 +14,58 @@
         <% } %>
         <form action="/signup" method="post">
             <div>
-                <label id="signupLabel">First Name : </label>
+                <label class="signupLabel">First Name : </label>
                 <input type="text" name="firstName"/>
-            </div>
-            
-            <div>
-                <label id="signupLabel">Last Name : </label>
-                <input type="text" name="lastName"/>
-            </div>
-            
-            <div>
-                <label id="signupLabel">Email : </label>
-                <input type="text" name="email"/>
-            </div>
-            
-            <div>
-                <label id="signupLabel">User Name : </label>
-                <input type="text" name="username"/>
-            </div>
-            
-            <div>
-                <label id="signupLabel">Password : </label>
-                <input type="text" name="password"/>
             </div>
 
             <div>
-                <label id="signupLabel">Monitor Sensor : </label>
+                <label class="signupLabel">Last Name : </label>
+                <input type="text" name="lastName"/>
+            </div>
+
+            <div>
+                <label class="signupLabel">Email : </label>
+                <input type="text" name="email"/>
+            </div>
+
+            <div>
+                <label class="signupLabel">User Name : </label>
+                <input type="text" name="username"/>
+            </div>
+
+            <div>
+                <label class="signupLabel">Password : </label>
+                <input type="text" name="password"/>
+            </div>
+            <div>
+                <label class="signupLabel">Valve Information : </label>
+                <input type="text" name="info"/>
+            </div>
+
+            <div>
+                <label class="signupLabel">Monitor Sensor : </label>
                 <input type="text" name="monitorSensor"/>
             </div>
 
             <div>
-                <label id="signupLabel">Monitor Actuator : </label>
+                <label class="signupLabel">Monitor Actuator : </label>
                 <input type="text" name="monitorActuator"/>
             </div>
 
             <div>
-                <label id="signupLabel">Control : </label>
+                <label class="signupLabel">Control : </label>
                 <input type="text" name="control"/>
             </div>
 
             <div>
-                <label id="signupLabel">Control key : </label>
+                <label class="signupLabel">Control key : </label>
                 <input type="text" name="controlKey"/>
             </div>
-            
+
             <div>
                 <input class="btn btn-default" type="submit" value="Sign Up"/>
             </div>
-        
+
         </form>
     </body>
 </html>
